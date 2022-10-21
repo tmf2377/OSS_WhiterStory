@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public int ammo;
     public int coin;
     public int health;
+    public int score;
 
     public int maxAmmo;
     public int maxCoin;
@@ -40,13 +41,16 @@ public class Player : MonoBehaviour
     Animator anim;
 
     GameObject nearObject;
-    GameObject equipWeapon;
+    public Weapon equipWeapon;
     int equipWeaponIndex = -1;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+
+        Debug.Log(PlayerPrefs.GetInt("MaxScore"));
+        //PlayerPrefs.SetInt("MaxScore", 112500);
     }
 
     void Update()
@@ -136,11 +140,12 @@ public class Player : MonoBehaviour
 
         if ((sDown1 || sDown2 || sDown3) && !isJump && !isDodge)
         {
-            if(equipWeapon != null) equipWeapon.SetActive(false);
+            if(equipWeapon != null) 
+                equipWeapon.gameObject.SetActive(false);
 
             equipWeaponIndex = weaponIndex;
-            equipWeapon = weapons[weaponIndex];
-            equipWeapon.SetActive(true);
+            equipWeapon = weapons[weaponIndex].GetComponent<Weapon>();
+            equipWeapon.gameObject.SetActive(true);
 
             anim.SetTrigger("doSwap");
 
