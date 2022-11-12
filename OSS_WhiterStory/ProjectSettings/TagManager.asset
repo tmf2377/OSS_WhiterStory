@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - Bullet
   - Shop
+  - FieldItem
   layers:
   - Default
   - TransparentFX
