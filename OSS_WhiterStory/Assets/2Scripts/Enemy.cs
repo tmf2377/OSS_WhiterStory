@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public int curHealth;
     public Transform target;
     public bool isChase;
+    Player player;
 
     Rigidbody rigid;
     BoxCollider boxCollider;
@@ -105,6 +106,7 @@ public class Enemy : MonoBehaviour
                 rigid.AddForce(reactVec*5,ForceMode.Impulse);
             }
             Destroy(gameObject, 4);
+            player.score++;
         }
     }
 }
