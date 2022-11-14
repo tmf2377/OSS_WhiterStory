@@ -1,21 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
     public int maxHealth;
     public int curHealth;
+    public Transform target;
+    public bool isChase;
+    Player player;
 
     Rigidbody rigid;
     BoxCollider boxCollider;
     Material mat;
+    NavMeshAgent nav;
+    Animator anim;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-        mat = GetComponent<MeshRenderer>().material;
+        mat = GetComponentInChildren<MeshRenderer>().material;
+        nav = GetComponent<NavMeshAgent>();
+        anim = GetComponentInChildren<Animator>();
+
+        Invoke("ChaseStart", 2);
+    }
+
+    void ChaseStart()
+    {
+        isChase = true;
+        anim.SetBool("isWalk", true);
+    }
+    void Update()
+    {
+        if(isChase)
+            nav.SetDestination(target.position);
+    }
+    void FixedUpdate()
+    {
+        FreezeVelocity();
+    }
+
+    void FreezeVelocity()
+    {
+        if(isChase)
+        {
+            rigid.velocity = Vector3.zero;
+            rigid.angularVelocity = Vector3.zero;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -53,6 +87,10 @@ public class Enemy : MonoBehaviour
         {
             mat.color = Color.gray;
             gameObject.layer = 14;
+            isChase = false;
+            nav.enabled = false;
+            anim.SetTrigger("doDie");
+
             if (isGrenade)
             {
                 reactVec = reactVec.normalized;
@@ -68,6 +106,7 @@ public class Enemy : MonoBehaviour
                 rigid.AddForce(reactVec*5,ForceMode.Impulse);
             }
             Destroy(gameObject, 4);
+            player.score++;
         }
     }
 }
