@@ -12,7 +12,11 @@ TagManager:
   - Bullet
   - Shop
   - Enemy
+<<<<<<< HEAD
   - EnemyBullet
+=======
+  - FieldItem
+>>>>>>> 93f219f1ce875a6d6ebedceabf425fdf1f79c41a
   layers:
   - Default
   - TransparentFX
@@ -29,7 +33,11 @@ TagManager:
   - Wall
   - Enemy
   - EnemyDead
+<<<<<<< HEAD
   - EnemyBullet
+=======
+  - 
+>>>>>>> 93f219f1ce875a6d6ebedceabf425fdf1f79c41a
   - 
   - 
   - 
