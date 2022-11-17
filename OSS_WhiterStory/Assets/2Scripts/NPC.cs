@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    public Player player;
-    Rigidbody rigid;
+    void npcTargeting()
+    {
+        float ntargetRadious = 1.5F;
+        float ntargetRange = 3f;
 
-    private void Awake()
-    {
-        rigid = GetComponent<Rigidbody>();
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.layer == 9)
+        RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, ntargetRadious,
+           transform.forward, ntargetRange,
+           LayerMask.GetMask("Player"));
+
+        if (rayHits.Length > 0)
         {
-            if (player.score == 0)
-                Debug.Log("대화창: 몬스터 10마리를 잡아와라");
-
-            else if (player.score == 10)
-                Debug.Log("대화창: 다음 스테이지로");
-            else
-                Debug.Log("대화창: 더 잡아라");
+            //대화
         }
+    }
+    private void FixedUpdate()
+    {
+        npcTargeting();
     }
 }

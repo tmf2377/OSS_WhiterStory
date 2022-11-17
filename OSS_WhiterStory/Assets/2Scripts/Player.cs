@@ -43,12 +43,13 @@ public class Player : MonoBehaviour
     bool isReload = false;
     bool isBorder;
     bool isShop;
-
+    bool isDamage;
     Vector3 moveVec;
     Vector3 dodgeVec;
 
     Rigidbody rigid;
     Animator anim;
+    MeshRenderer[] meshs;
 
     GameObject nearObject;
     public Weapon equipWeapon;
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+        meshs = GetComponentsInChildren<MeshRenderer>();
 
         Debug.Log(PlayerPrefs.GetInt("MaxScore"));
         //PlayerPrefs.SetInt("MaxScore", 112500);
@@ -325,6 +327,33 @@ public class Player : MonoBehaviour
                     break;
             }
             Destroy(other.gameObject);
+        }
+        else if(other.tag == "EnemyBullet")
+        {
+            if(!isDamage)
+            {
+                Bullet enemyBullet = other.GetComponent<Bullet>();
+                health -= enemyBullet.damage;
+                if (other.GetComponent<Rigidbody>() != null)
+                    Destroy(other.gameObject);
+                StartCoroutine(OnDamage());
+            }
+        }
+    }
+
+    IEnumerator OnDamage()
+    {
+        isDamage = true;
+        foreach(MeshRenderer mesh in meshs)
+        {
+            mesh.material.color = Color.yellow;
+        }
+        yield return new WaitForSeconds(1f); ;
+
+        isDamage = false;
+        foreach (MeshRenderer mesh in meshs)
+        {
+            mesh.material.color = Color.white;
         }
     }
     void OnTriggerStay(Collider other)
