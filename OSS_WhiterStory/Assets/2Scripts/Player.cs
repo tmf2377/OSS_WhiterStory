@@ -358,6 +358,9 @@ public class Player : MonoBehaviour
         if(isBossAtk)
             rigid.AddForce(transform.forward * -25, ForceMode.Impulse);
 
+        if (health <= 0 && !isDead)
+            OnDie();
+
         yield return new WaitForSeconds(1f); ;
 
         isDamage = false;
@@ -368,9 +371,6 @@ public class Player : MonoBehaviour
 
         if (isBossAtk)
             rigid.velocity = Vector3.zero;
-
-        if (health <= 0)
-            OnDie();
     }
 
     void OnDie()

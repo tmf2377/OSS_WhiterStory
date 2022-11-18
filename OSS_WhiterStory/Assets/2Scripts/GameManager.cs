@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
 	public GameObject menuPanel;
 	public GameObject gamePanel;
+	public GameObject overPanel;
 	public Text maxScoreTxt;
 	public Text scoreTxt;
 	public Text stageTxt;
@@ -77,8 +78,15 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        
+        gamePanel.SetActive(false);
+		overPanel.SetActive(true);
+
     }
+
+	public void Restart()
+	{
+		SceneManager.LoadScene("0_StartStage");
+	}
 
     public void StageStart()
 	{
