@@ -5,18 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
-  - Item
-  - Weapon
   - Melee
-  - Wall
   - Bullet
-  - Shop
   - Enemy
-<<<<<<< HEAD
   - EnemyBullet
-=======
-  - FieldItem
->>>>>>> 93f219f1ce875a6d6ebedceabf425fdf1f79c41a
+  - npc
   layers:
   - Default
   - TransparentFX
@@ -26,18 +19,14 @@ TagManager:
   - UI
   - 
   - 
-  - Floor
   - Player
-  - PlayerBullet
-  - BulletCase
-  - Wall
-  - Enemy
-  - EnemyDead
-<<<<<<< HEAD
-  - EnemyBullet
-=======
+  - enemy
+  - enemyBullet
   - 
->>>>>>> 93f219f1ce875a6d6ebedceabf425fdf1f79c41a
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

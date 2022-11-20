@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
     public int hasGrenades;
     public GameObject grenadeObj;
     public Camera followCamera;
+    public GameManager manager;
 
     public int ammo;
     public int coin;
+    public int coinCnt;
     public int health;
     public int score;
 
@@ -271,6 +273,11 @@ public class Player : MonoBehaviour
                 shop.Enter(this);
                 isShop = true;
             }
+            else if(nearObject.tag == "npc")
+            {
+                NPC npc = nearObject.GetComponent<NPC>();
+                npc.Enter(this);
+            }
         }
     }
 
@@ -310,9 +317,11 @@ public class Player : MonoBehaviour
                         ammo = maxAmmo;
                     break;
                 case Item.Type.Coin:
+                    coinCnt++;
                     coin += item.value;
                     if (coin > maxCoin)
                         coin = maxCoin;
+                    manager.CatchMonster(coinCnt);
                     break;
                 case Item.Type.Heart:
                     health += item.value;
@@ -358,7 +367,7 @@ public class Player : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Weapon"||other.tag == "Shop") {
+        if (other.tag == "Weapon"||other.tag == "Shop" || other.tag == "npc") {
             Debug.Log("h");
             nearObject = other.gameObject;
         }
@@ -374,6 +383,12 @@ public class Player : MonoBehaviour
             Shop shop = nearObject.GetComponent<Shop>();
             shop.Exit();
             isShop=false;
+            nearObject = null;
+        }
+        else if (other.tag == "npc")
+        {
+            NPC npc = nearObject.GetComponent<NPC>();
+            npc.Exit();
             nearObject = null;
         }
     }

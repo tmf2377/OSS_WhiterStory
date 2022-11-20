@@ -13,10 +13,7 @@ public class Enemy : MonoBehaviour
     public BoxCollider meleeArea;
     public GameObject bullet;
     public bool isChase;
-<<<<<<< HEAD
     public bool isAttack;
-=======
->>>>>>> 93f219f1ce875a6d6ebedceabf425fdf1f79c41a
 
     Rigidbody rigid;
     BoxCollider boxCollider;

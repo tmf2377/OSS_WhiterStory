@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1421131152721378827
 Transform:
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   enemyType: 0
   maxHealth: 50
   curHealth: 50
-  target: {fileID: 0}
+  target: {fileID: 8228529062461533119, guid: 913cdd178cc390d4ab7b9cbbd7d85882, type: 3}
   meleeArea: {fileID: 3339083106589866814}
   bullet: {fileID: 0}
   isChase: 0

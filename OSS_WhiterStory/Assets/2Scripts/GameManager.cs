@@ -32,12 +32,13 @@ public class GameManager : MonoBehaviour
 	public Text enemyATxt;
 	public Text enemyBTxt;
 	public Text enemyCTxt;
+	public Text QuestText;
 	public RectTransform bossHealthGroup;
 	public RectTransform bossHealthBar;
 
 	void Awake()
 	{
-		maxScoreTxt.text = string.Format("{0:n0}", PlayerPrefs.GetInt("MaxScore")); 
+		maxScoreTxt.text = string.Format("{0:n0}", PlayerPrefs.GetInt("MaxScore"));
 	}
 
 	public void GameStart()
@@ -91,5 +92,10 @@ public class GameManager : MonoBehaviour
 
 		// 보스체력 UI
 		//bossHealthBar.localScale = new Vector3(boss.curHealth / bossHealthBar.maxHealth, 1, 1);
+	}
+
+	public void CatchMonster(int count)
+	{
+		QuestText.text = count.ToString();
 	}
 }
