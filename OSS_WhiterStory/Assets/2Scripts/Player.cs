@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance = null;
+
     public float speed;
     public GameObject[] weapons;
     public bool[] hasWeapons;
@@ -23,6 +25,8 @@ public class Player : MonoBehaviour
     public int maxCoin;
     public int maxHealth;
     public int maxHasGrenades;
+
+    public int enemyCnt = 0;
 
     float hAxis;
     float vAxis;
@@ -45,7 +49,7 @@ public class Player : MonoBehaviour
     bool isBorder;
     bool isShop;
     bool isDamage;
-    bool isDead;
+    public bool isDead;
 
     Vector3 moveVec;
     Vector3 dodgeVec;
@@ -65,7 +69,17 @@ public class Player : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         meshs = GetComponentsInChildren<MeshRenderer>();
 
-        Debug.Log(PlayerPrefs.GetInt("MaxScore"));
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if (instance != this)
+                Destroy(this.gameObject);
+        }
+
         //PlayerPrefs.SetInt("MaxScore", 112500);
     }
 
@@ -376,15 +390,22 @@ public class Player : MonoBehaviour
     void OnDie()
     {
         anim.SetTrigger("doDie");
+        anim.SetBool("isDead", true);
         isDead = true;
         manager.GameOver();
+    }
+
+    public void Restart()
+    {
+        transform.position = Vector3.up * 0.8f;
+        anim.SetBool("isDead", false);
+        isDead = false;
     }
     void OnTriggerStay(Collider other)
     {
         if (other.tag == "Weapon"||other.tag == "Shop") {
             nearObject = other.gameObject;
         }
-
     }
 
     void OnTriggerExit(Collider other)

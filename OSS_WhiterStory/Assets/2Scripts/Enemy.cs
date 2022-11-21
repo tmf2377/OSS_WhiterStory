@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public int maxHealth;
     public int curHealth;
     public int score;
+    public int enemyCnt;
     public GameManager manager;
     public Transform target;
     public BoxCollider meleeArea;
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
     {
         if(nav.enabled && enemyType != Type.D)
         {
+            target = Player.instance.transform;
             nav.SetDestination(target.position);
             nav.isStopped = !isChase;
         }
@@ -191,8 +193,7 @@ public class Enemy : MonoBehaviour
             nav.enabled = false;
             anim.SetTrigger("doDie");
 
-            Player player = target.GetComponent<Player>();
-            player.score += score;
+            Player.instance.score += score;
             int ranCoin = Random.Range(0, 3);
             Instantiate(coins[ranCoin], transform.position, Quaternion.identity);
 
@@ -229,6 +230,7 @@ public class Enemy : MonoBehaviour
             }
 
             Destroy(gameObject, 4);
+            Player.instance.enemyCnt++;
         }
     }
 }

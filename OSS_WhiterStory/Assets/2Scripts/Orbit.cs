@@ -15,6 +15,7 @@ public class Orbit : MonoBehaviour
 
     void Update()
     {
+        target = Player.instance.transform;
         transform.position = target.position + offSet;
         transform.RotateAround(target.position,
                                Vector3.up,
