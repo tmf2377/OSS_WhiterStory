@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
 	public Text enemyATxt;
 	public Text enemyBTxt;
 	public Text enemyCTxt;
-	public Text QuestText;
 	public RectTransform bossHealthGroup;
 	public RectTransform bossHealthBar;
 
@@ -67,7 +66,7 @@ public class GameManager : MonoBehaviour
 		int hour = (int)(playTime / 3600);
 		int min = (int)((playTime - hour * 3600) / 60);
 		int second = (int)(playTime % 60);
-		playTimeTxt.text = string.Format("{0:00}", hour) + string.Format("{0:00}", min) + string.Format("{0:00}", second);
+		//playTimeTxt.text = string.Format("{0:00}", hour) + string.Format("{0:00}", min) + string.Format("{0:00}", second);
 
 		// 플레이어 UI
 		playerHealthTxt.text = player.health + " / " + player.maxHealth;
@@ -92,10 +91,5 @@ public class GameManager : MonoBehaviour
 
 		// 보스체력 UI
 		//bossHealthBar.localScale = new Vector3(boss.curHealth / bossHealthBar.maxHealth, 1, 1);
-	}
-
-	public void CatchMonster(int count)
-	{
-		QuestText.text = count.ToString();
 	}
 }

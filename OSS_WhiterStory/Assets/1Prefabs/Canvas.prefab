@@ -282,7 +282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 85, y: 325}
+  m_AnchoredPosition: {x: 60, y: 319}
   m_SizeDelta: {x: -170, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &661542306
@@ -325,7 +325,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uBAAC\uC2A4\uD130 10\uB9C8\uB9AC\uB97C \uC7A1\uC544\uC624\uC138\uC694."
+  m_Text: "\uD544\uB4DC \uB0B4\uC758 \uBAAC\uC2A4\uD130\uB97C \uBAA8\uB450 \uC7A1\uC73C\uBA74,\n\uBCF4\uC2A4
+    \uBAAC\uC2A4\uD130\uAC00 \uB4F1\uC7A5\uD569\uB2C8\uB2E4!!"
 --- !u!1 &890655648
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 10, y: 250}
+  m_AnchoredPosition: {x: -26, y: 205}
   m_SizeDelta: {x: -170, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1470760207
@@ -592,7 +593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 85, y: 250}
+  m_AnchoredPosition: {x: 116, y: 205}
   m_SizeDelta: {x: -170, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1758923963
@@ -616,7 +617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.6509434, g: 0.033775367, b: 0.033775367, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -635,7 +636,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: / 10
+  m_Text: / 1 (BOSS)
 --- !u!1 &1880870011
 GameObject:
   m_ObjectHideFlags: 0

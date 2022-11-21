@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
 
     public int ammo;
     public int coin;
-    public int coinCnt;
     public int health;
     public int score;
 
@@ -317,11 +316,9 @@ public class Player : MonoBehaviour
                         ammo = maxAmmo;
                     break;
                 case Item.Type.Coin:
-                    coinCnt++;
                     coin += item.value;
                     if (coin > maxCoin)
                         coin = maxCoin;
-                    manager.CatchMonster(coinCnt);
                     break;
                 case Item.Type.Heart:
                     health += item.value;
@@ -385,10 +382,10 @@ public class Player : MonoBehaviour
             isShop=false;
             nearObject = null;
         }
-        else if (other.tag == "npc")
+        else if (other.tag == "npc") //영역에서 벗어나면 ui 내려감.
         {
             NPC npc = nearObject.GetComponent<NPC>();
-            npc.Exit();
+            npc.npcExit();
             nearObject = null;
         }
     }
