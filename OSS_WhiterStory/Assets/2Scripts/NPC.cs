@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour
     Player enterPlayer;
 
 
-    public void CatchMonster(int count)
+    public void CatchMonster(int count) //보스 몬스터가 죽는 함수에 넣어서 count ++ 후 활성화
     {
         QuestText.text = count.ToString();
     }
@@ -26,7 +26,7 @@ public class NPC : MonoBehaviour
         uiset.anchoredPosition = Vector3.zero;
     }
 
-    public void npcExit()
+    public void npcExit() 
     {
         anim.SetTrigger("doHello");
         uiset.anchoredPosition = Vector3.down * 2049;

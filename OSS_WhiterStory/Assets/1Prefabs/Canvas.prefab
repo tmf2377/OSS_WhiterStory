@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 429634259}
   - component: {fileID: 429634258}
   m_Layer: 5
-  m_Name: Exit Button
+  m_Name: Quest Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 653242919}
   - component: {fileID: 653242918}
   m_Layer: 5
-  m_Name: Exit Button
+  m_Name: NPC Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
