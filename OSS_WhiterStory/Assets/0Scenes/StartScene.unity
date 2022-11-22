@@ -964,7 +964,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337430323
 GameObject:
@@ -4393,18 +4393,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 115675013}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1882090294 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
-    type: 3}
-  m_PrefabInstance: {fileID: 2584258820205261805}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391483935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8203f8121803239469254fb82af14129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1890329249
 GameObject:
   m_ObjectHideFlags: 0
@@ -4816,15 +4804,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuCam: {fileID: 374811161}
   gameCam: {fileID: 1921231162}
-  player: {fileID: 1882090294}
+  boss: {fileID: 0}
+  itemShop: {fileID: 0}
+  weaponShop: {fileID: 0}
+  clearPortal: {fileID: 0}
+  enemyRespawnZone: {fileID: 0}
   stage: 0
   playTime: 0
   isBattle: 0
   enemyCntA: 0
   enemyCntB: 0
   enemyCntC: 0
+  enemyCntD: 0
+  enemyZones: []
+  enemies: []
+  enemyList: 
   menuPanel: {fileID: 1648183694}
   gamePanel: {fileID: 2043718794}
+  overPanel: {fileID: 0}
   maxScoreTxt: {fileID: 2027164899}
   scoreTxt: {fileID: 840450957}
   stageTxt: {fileID: 751080363}
@@ -6638,75 +6635,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6516c32f91d0a1840a561bc75cd99cbb, type: 3}
---- !u!1001 &7200382235867813141
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.335453
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 13.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -16.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945011, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7200382236447945013, guid: 30bafa021e2ec0945b25b738fe7fdb42,
-        type: 3}
-      propertyPath: m_Name
-      value: TestEnemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 30bafa021e2ec0945b25b738fe7fdb42, type: 3}
 --- !u!1001 &8850394643681978681
 PrefabInstance:
   m_ObjectHideFlags: 0
