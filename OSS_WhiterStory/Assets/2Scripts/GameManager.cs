@@ -7,12 +7,15 @@ using System.Net.Sockets;
 
 public class GameManager : MonoBehaviour
 {
-	public GameObject menuCam;
+    public static GameManager instance = null;
+
+    public GameObject menuCam;
 	public GameObject gameCam;
 	public Boss boss;
 	public GameObject itemShop;
 	public GameObject weaponShop;
 	public GameObject clearPortal;
+	public GameObject enemyRespawnZone;
 	public int stage;
 	public float playTime;
 	public bool isBattle;
@@ -21,7 +24,7 @@ public class GameManager : MonoBehaviour
 	public int enemyCntC;
 	public int enemyCntD;
 
-	public Transform[] enemyZones;
+	public GameObject[] enemyZones;
 	public GameObject[] enemies;
 	public List<int> enemyList;
 
@@ -47,9 +50,17 @@ public class GameManager : MonoBehaviour
 
 	void Awake()
 	{
-		enemyList = new List<int>();
-        if (SceneManager.GetActiveScene().name != "0_StartStage")
-            StageStart();
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if (instance != this)
+                Destroy(this.gameObject);
+        }
+        enemyList = new List<int>();
         maxScoreTxt.text = string.Format("{0:n0}", PlayerPrefs.GetInt("MaxScore"));
     }
 
@@ -61,9 +72,7 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		Debug.Log(scene.name + "으로 변경되었습니다.");
-
-        if (SceneManager.GetActiveScene().name != "0_StartStage")
+		if (SceneManager.GetActiveScene().name != "0_StartStage")
 			StageStart();
 	}
 
@@ -86,31 +95,35 @@ public class GameManager : MonoBehaviour
     {
         gamePanel.SetActive(false);
 		overPanel.SetActive(true);
-
     }
 
 	public void Restart()
 	{
 		SceneManager.LoadScene("0_StartStage");
-        //Player.instance.transform.position = Vector3.up * 0.8f;
+        gamePanel.SetActive(true);
+        overPanel.SetActive(false);
+		StageEnd();
     }
 
     public void StageStart()
 	{
 		isBattle = true;
 		stage = SceneManager.GetActiveScene().buildIndex;
-        foreach (Transform zone in enemyZones)
-            zone.gameObject.SetActive(true);
+		enemyZones = GameObject.FindGameObjectsWithTag("Enemy Zone");
+        clearPortal = GameObject.FindGameObjectWithTag("StartZone");
+        clearPortal.SetActive(false);
+        foreach (GameObject zone in enemyZones)
+            zone.SetActive(true);
         StartCoroutine(InBattle());
 	}
 
 	public void StageEnd()
 	{
-        clearPortal.SetActive(true);
+		clearPortal.SetActive(true);
         isBattle = false;
 
-		foreach(Transform zone in enemyZones)
-			zone.gameObject.SetActive(false);
+		foreach(GameObject zone in enemyZones)
+			zone.SetActive(false);
 	}
 
 	IEnumerator InBattle()
@@ -137,9 +150,8 @@ public class GameManager : MonoBehaviour
         while (enemyList.Count > 0)
         {
             int ranZone = Random.Range(0, 4);
-            GameObject instantEnemy = Instantiate(enemies[enemyList[0]], enemyZones[ranZone].position, enemyZones[ranZone].rotation);
+            GameObject instantEnemy = Instantiate(enemies[enemyList[0]], enemyZones[ranZone].transform.position, enemyZones[ranZone].transform.rotation);
             Enemy enemy = instantEnemy.GetComponent<Enemy>();
-            //enemy.target = Player.instance.transform;
             enemy.manager = this;
             enemyList.RemoveAt(0);
 			yield return new WaitForSeconds(4f);
@@ -150,10 +162,11 @@ public class GameManager : MonoBehaviour
 			yield return null;
 		}
 
-        if (stage == 3)
+        if (stage % 3 == 0)
         {
+            yield return new WaitForSeconds(3f);
             enemyCntD++;
-            GameObject instantEnemy = Instantiate(enemies[3], enemyZones[0].position, enemyZones[0].rotation);
+            GameObject instantEnemy = Instantiate(enemies[3], enemyZones[0].transform.position, enemyZones[0].transform.rotation);
             Enemy enemy = instantEnemy.GetComponent<Enemy>();
             enemy.target = Player.instance.transform;
             enemy.manager = this;
@@ -185,7 +198,7 @@ public class GameManager : MonoBehaviour
 		int hour = (int)(playTime / 3600);
 		int min = (int)((playTime - hour * 3600) / 60);
 		int second = (int)(playTime % 60);
-		playTimeTxt.text = string.Format("{0:00}", hour) + string.Format("{0:00}", min) + string.Format("{0:00}", second);
+		playTimeTxt.text = string.Format("{0:00}", hour) + ":" + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", second);
 
 		// 플레이어 UI
 		playerHealthTxt.text = Player.instance.health + " / " + Player.instance.maxHealth;
@@ -209,7 +222,7 @@ public class GameManager : MonoBehaviour
 		enemyCTxt.text = enemyCntC.ToString();
 
 		// 보스체력 UI
-		if(boss != null)
+		if(boss != null && SceneManager.GetActiveScene().name != "0_StartStage")
 		{
 			bossHealthGroup.anchoredPosition = Vector3.down * 30;
             bossHealthBar.localScale = new Vector3((float)boss.curHealth / boss.maxHealth, 1, 1);

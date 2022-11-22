@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class Player : MonoBehaviour
     public int hasGrenades;
     public GameObject grenadeObj;
     public Camera followCamera;
-    public GameManager manager;
 
     public int ammo;
     public int coin;
@@ -79,7 +79,6 @@ public class Player : MonoBehaviour
             if (instance != this)
                 Destroy(this.gameObject);
         }
-
         //PlayerPrefs.SetInt("MaxScore", 112500);
     }
 
@@ -97,7 +96,6 @@ public class Player : MonoBehaviour
         Interaction();
     }
 
-    
     void GetInput()
     {
         hAxis = Input.GetAxisRaw("Horizontal");
@@ -392,7 +390,7 @@ public class Player : MonoBehaviour
         anim.SetTrigger("doDie");
         anim.SetBool("isDead", true);
         isDead = true;
-        manager.GameOver();
+        GameManager.instance.GameOver();
     }
 
     public void Restart()
