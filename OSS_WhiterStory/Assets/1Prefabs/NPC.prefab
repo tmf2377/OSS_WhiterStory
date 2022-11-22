@@ -4864,12 +4864,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CntBoss: 1
-  KillBoss: 0
+  KillBoss: 1
   uiset: {fileID: 0}
   QuestFail: {fileID: 0}
   anim: {fileID: 8800558929292999491}
   killBoss: {fileID: 0}
   cntBoss: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!1001 &374968775061778881
 PrefabInstance:
   m_ObjectHideFlags: 0

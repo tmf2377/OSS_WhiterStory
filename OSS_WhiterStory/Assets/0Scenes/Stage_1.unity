@@ -863,6 +863,11 @@ PrefabInstance:
       objectReference: {fileID: 1203149280}
     - target: {fileID: 8800558930697034356, guid: d9965be0e7f2d1d4d9a42c2190f8e029,
         type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1006969059}
+    - target: {fileID: 8800558930697034356, guid: d9965be0e7f2d1d4d9a42c2190f8e029,
+        type: 3}
       propertyPath: killBoss
       value: 
       objectReference: {fileID: 197494378}

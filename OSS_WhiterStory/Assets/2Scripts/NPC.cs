@@ -13,12 +13,14 @@ public class NPC : MonoBehaviour
     public Animator anim;
     public Text killBoss;
     public Text cntBoss;
+    public GameManager manager;
     
     Player enterPlayer;
 
     public void Awake()
     {
         cntBoss.text = "/ " + CntBoss.ToString() +" (Boss)";
+        killBoss.text = KillBoss.ToString();
     }
     public void CatchMonster() //보스 몬스터가 죽는 함수에 삽입
     {
@@ -44,9 +46,9 @@ public class NPC : MonoBehaviour
 
     public void NextStage()
     {
-        if (killBoss.text == "1") //보스 몬스터를 죽였으면
+        if (killBoss.text == CntBoss.ToString()) //보스 몬스터를 죽였으면
         {
-            SceneManager.LoadScene("nextstage"); //스테이지 번호로 조정, 현재는 임시로 이름 넣어서 실험
+            SceneManager.LoadScene(manager.stage +1); //스테이지 번호로 조정
         }
         else //못 죽였으면
         {

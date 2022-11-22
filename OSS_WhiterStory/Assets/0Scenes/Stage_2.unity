@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: f5c40bb973fe81c4382682657a8bb97a, type: 2}
 --- !u!1 &49583092
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +313,11 @@ PrefabInstance:
       propertyPath: QText2
       value: 
       objectReference: {fileID: 1610945607}
+    - target: {fileID: 8800558930697034356, guid: d9965be0e7f2d1d4d9a42c2190f8e029,
+        type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 215742807}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9965be0e7f2d1d4d9a42c2190f8e029, type: 3}
 --- !u!114 &170932599 stripped
@@ -359,7 +364,7 @@ MonoBehaviour:
   menuCam: {fileID: 0}
   gameCam: {fileID: 0}
   player: {fileID: 0}
-  stage: 2
+  stage: 1
   playTime: 0
   isBattle: 0
   enemyCntA: 3
