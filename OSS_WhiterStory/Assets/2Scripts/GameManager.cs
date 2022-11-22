@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
             Enemy enemy = instantEnemy.GetComponent<Enemy>();
             enemy.manager = this;
             enemyList.RemoveAt(0);
-			yield return new WaitForSeconds(4f);
+			yield return new WaitForSeconds(10f);
         }
 
         while (enemyCntA + enemyCntB + enemyCntC > 0)
