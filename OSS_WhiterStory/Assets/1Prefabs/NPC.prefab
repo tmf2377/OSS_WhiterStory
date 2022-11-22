@@ -32,7 +32,7 @@ GameObject:
   - component: {fileID: 8800558929434285714}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4863,11 +4863,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22414ecf1a8aba439a81e13742321d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CntBoss: 1
+  KillBoss: 0
   uiset: {fileID: 0}
   QuestFail: {fileID: 0}
   anim: {fileID: 8800558929292999491}
-  QuestText: {fileID: 0}
-  manager: {fileID: 0}
+  killBoss: {fileID: 0}
+  cntBoss: {fileID: 0}
 --- !u!1001 &374968775061778881
 PrefabInstance:
   m_ObjectHideFlags: 0

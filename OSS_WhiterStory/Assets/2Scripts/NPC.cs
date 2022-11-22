@@ -6,18 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour
 {
+    public int CntBoss;
+    public int KillBoss;
     public RectTransform uiset;
     public RectTransform QuestFail;
     public Animator anim;
-    public Text QuestText;
-    public GameManager manager;
-
+    public Text killBoss;
+    public Text cntBoss;
+    
     Player enterPlayer;
 
-
-    public void CatchMonster(int count) //보스 몬스터가 죽는 함수에 넣어서 count ++ 후 활성화
+    public void Awake()
     {
-        QuestText.text = count.ToString();
+        cntBoss.text = "/ " + CntBoss.ToString() +" (Boss)";
+    }
+    public void CatchMonster() //보스 몬스터가 죽는 함수에 삽입
+    {
+        KillBoss++;
+        killBoss.text = KillBoss.ToString();
     }
 
     public void Enter(Player player) //대화 걸기
@@ -38,7 +44,7 @@ public class NPC : MonoBehaviour
 
     public void NextStage()
     {
-        if (QuestText.text == "1") //보스 몬스터를 죽였으면
+        if (killBoss.text == "1") //보스 몬스터를 죽였으면
         {
             SceneManager.LoadScene("nextstage"); //스테이지 번호로 조정, 현재는 임시로 이름 넣어서 실험
         }

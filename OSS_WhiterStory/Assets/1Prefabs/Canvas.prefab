@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 1655240047}
   - component: {fileID: 1655240046}
   m_Layer: 5
-  m_Name: npcText
+  m_Name: QuestText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

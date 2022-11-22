@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public int coin;
     public int health;
     public int score;
+    public int potion;
 
     public int maxAmmo;
     public int maxCoin;
@@ -388,5 +389,15 @@ public class Player : MonoBehaviour
             npc.npcExit();
             nearObject = null;
         }
+    }
+
+    public int Health()
+    {
+        return health;
+    }
+
+    public int MaxHealth()
+    {
+        return maxHealth;
     }
 }
