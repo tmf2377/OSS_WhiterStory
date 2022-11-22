@@ -60,11 +60,13 @@ public class Inventory : MonoBehaviour
         onChangeItem.Invoke();
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("FieldItem"))
+        Debug.Log("Inventory");
+        if (other.tag == "Potion")
         {
-            FieldItems fieldItems = collision.GetComponent<FieldItems>();
+            Debug.Log("potion");
+            FieldItems fieldItems = other.GetComponent<FieldItems>();
             if (AddItem(fieldItems.GetItem()))
                 fieldItems.DestroyItem();
         }
