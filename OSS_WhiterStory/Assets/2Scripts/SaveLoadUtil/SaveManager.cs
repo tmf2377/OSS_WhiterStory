@@ -13,6 +13,8 @@ public class SaveManager : MonoBehaviour
     const string SCORE = "score";
     const string TIME = "time";
     const string GRENADE = "grenade";
+    const string INVEN_COUNT = "inven_count";
+    const string INVEN_INDEX_PRE = "inven_index";
 
     public Player player;
     public GameManager gameManager;
@@ -26,6 +28,8 @@ public class SaveManager : MonoBehaviour
     public int loaded_score;
     public float loaded_time;
     public int loaded_grenade;
+    public int loaded_item_count;
+    public List<int> loaded_item;
 
     public void ReadALL()
     {
@@ -38,6 +42,16 @@ public class SaveManager : MonoBehaviour
         loaded_score = PlayerPrefs.GetInt(SCORE, 0);
         loaded_time = PlayerPrefs.GetFloat(TIME, 0);
         loaded_grenade = PlayerPrefs.GetInt(GRENADE, 0);
+        loaded_item_count = PlayerPrefs.GetInt(INVEN_COUNT, 0);
+        for(int i = 0; i < loaded_item_count; i++)
+        {
+            int temp = PlayerPrefs.GetInt(INVEN_INDEX_PRE+i, -1);
+            if(temp > 0)
+            {
+                loaded_item.Add(temp);
+            }
+        }
+
     }
     public void WriteALL()
     {
@@ -56,6 +70,20 @@ public class SaveManager : MonoBehaviour
                 weapon_mask += (int)Mathf.Pow(2, i);
             }
         }
+        List<InventItem> items = player.GetComponent<Inventory>().items;
+        int item_count =0;
+        for (int i = 0; i < items.Count; i++)
+        {
+            for(int j=0;j<ItemDatabase.instance.itemDB.Count; j++)
+            {
+                if(items[i].itemName == ItemDatabase.instance.itemDB[j].itemName)
+                {
+                    item_count++;
+                    PlayerPrefs.SetInt(INVEN_INDEX_PRE + i, j);
+                }
+            }
+        }
+        PlayerPrefs.SetInt(INVEN_COUNT, item_count);
         PlayerPrefs.SetInt(WEAPON,weapon_mask);
         PlayerPrefs.SetInt(WEAPONCOUNT, player.hasWeapons.Length);
         PlayerPrefs.SetInt(HP,player.health);
@@ -100,11 +128,28 @@ public class SaveManager : MonoBehaviour
             masktemp = masktemp >> 1;
             i++;
         }
+        
+        StartCoroutine("waitforInven");
 
     }
     // Update is called once per frame
     private void Start()
     {
         DontDestroyOnLoad(this);
+    }
+    IEnumerator waitforInven()
+    {
+        
+        for (int i = 0; i < loaded_item.Count; i++)
+        {
+            while (Inventory.instance.AddItem(ItemDatabase.instance.itemDB[loaded_item[i]]) == false)
+            {
+                yield return new WaitForSeconds(0.01f);
+            }
+            if (loaded_item.Count > Inventory.instance.SlotCnt)
+            {
+                Inventory.instance.SlotCnt = (loaded_item.Count + (4 - loaded_item.Count % 4));
+            }
+        }
     }
 }
