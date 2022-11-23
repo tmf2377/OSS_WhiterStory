@@ -81,6 +81,8 @@ MonoBehaviour:
   maxHealth: 80
   curHealth: 80
   score: 250
+  enemyCnt: 0
+  manager: {fileID: 0}
   target: {fileID: 0}
   meleeArea: {fileID: 8424786907742718810}
   bullet: {fileID: 0}

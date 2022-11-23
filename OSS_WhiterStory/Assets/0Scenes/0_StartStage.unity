@@ -8326,17 +8326,17 @@ PrefabInstance:
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: ammo
-      value: 999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: coin
-      value: 99999
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: health
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
@@ -8366,17 +8366,17 @@ PrefabInstance:
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: hasWeapons.Array.data[0]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: hasWeapons.Array.data[1]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: hasWeapons.Array.data[2]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7499811856381313032, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
@@ -9024,7 +9024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1182902677
@@ -10201,8 +10201,9 @@ MonoBehaviour:
       type: 3}
     efts:
     - {fileID: 11400000, guid: 4b9439ab281b772438d6f0b3560ec698, type: 2}
-  fieldItemPrefab: {fileID: 7814718010506886805, guid: 15f5aacf11457984bb5a0164c561d53b,
-    type: 3}
+  fieldItemPrefab1: {fileID: 0}
+  fieldItemPrefab2: {fileID: 0}
+  fieldItemPrefab3: {fileID: 0}
   pos:
   - {x: 2, y: 2, z: 20}
   - {x: -2, y: 2, z: 20}
