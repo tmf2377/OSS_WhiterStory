@@ -4864,7 +4864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CntBoss: 1
-  KillBoss: 1
+  KillBoss: 0
   uiset: {fileID: 0}
   QuestFail: {fileID: 0}
   anim: {fileID: 8800558929292999491}
