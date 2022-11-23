@@ -33,11 +33,11 @@ public class SaveManager : MonoBehaviour
 
     public void ReadALL()
     {
-        loaded_gold = PlayerPrefs.GetInt(GOLD, 0);
+        loaded_gold = PlayerPrefs.GetInt(GOLD, 1000);
         loaded_weapon_mask = PlayerPrefs.GetInt(WEAPON, 0);
         loaded_weapon_count = PlayerPrefs.GetInt(WEAPONCOUNT, 3);
         loaded_hp = PlayerPrefs.GetInt(HP, 100);
-        loaded_stage = PlayerPrefs.GetInt(STAGE, 1);
+        loaded_stage = PlayerPrefs.GetInt(STAGE, 0);
         loaded_ammo = PlayerPrefs.GetInt(AMMO, 0);
         loaded_score = PlayerPrefs.GetInt(SCORE, 0);
         loaded_time = PlayerPrefs.GetFloat(TIME, 0);

@@ -19,6 +19,10 @@ public class LoadScene : MonoBehaviour
 
     private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
+        if(arg0.name == "0_StartStage")
+        {
+            saveManager.WriteALL();
+        }
         saveManager.AttachDataToPlayer();
     }
 
