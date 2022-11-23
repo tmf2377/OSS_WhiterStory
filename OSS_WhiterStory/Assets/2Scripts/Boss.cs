@@ -9,7 +9,6 @@ public class Boss : Enemy
     public Transform missilePortA;
     public Transform missilePortB;
     public bool isLook;
-    public NPC npc;
 
     Vector3 lookVec;
     Vector3 tauntVec;
@@ -31,7 +30,6 @@ public class Boss : Enemy
         if(isDead)
         {
             StopAllCoroutines();
-            npc.CatchMonster();
             return;
         }
         if (isLook)
