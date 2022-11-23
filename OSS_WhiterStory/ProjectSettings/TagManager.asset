@@ -3,36 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Floor
-  - Item
-  - Weapon
-  - Melee
-  - Wall
-  - Bullet
-  - Shop
-  - FieldItem
-  - Potion
-  - Enemy
-  - EnemyBullet
-  - Enemy Zone
-  - StartZone
-  layers:
-  - Default
-  - TransparentFX
-  - Ignore Raycast
-  - 
-  - Water
-  - UI
-  - 
-  - 
-  - Floor
-  - Player
-  - PlayerBullet
-  - BulletCase
-  - Wall
-  - Enemy
-  - EnemyDead
+  tags: []
   layers:
   - Default
   - TransparentFX
