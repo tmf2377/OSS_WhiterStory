@@ -19,6 +19,7 @@ TagManager:
   - StartZone
   - NPC
   - BossNPC
+  - MenuCam
   layers:
   - Default
   - TransparentFX

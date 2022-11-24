@@ -2880,6 +2880,7 @@ MonoBehaviour:
   stage: 0
   playTime: 0
   isBattle: 0
+  isFirstLoad: 0
   enemyCntA: 0
   enemyCntB: 0
   enemyCntC: 0
@@ -8565,11 +8566,11 @@ GameObject:
   - component: {fileID: 1172832551}
   m_Layer: 0
   m_Name: Menu Camera
-  m_TagString: MainCamera
+  m_TagString: MenuCam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1172832551
 Animator:
   serializedVersion: 3
@@ -14932,6 +14933,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 2430439101738404258, guid: b8723575205c7b94d993863c1849d964,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2430439101738404260, guid: b8723575205c7b94d993863c1849d964,
         type: 3}
       propertyPath: orthographic
@@ -16429,7 +16435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &6717399752598124376
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16583,7 +16589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &6717399752620747899
 CanvasRenderer:
   m_ObjectHideFlags: 0

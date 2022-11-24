@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 	public int stage;
 	public float playTime;
 	public bool isBattle;
+	public bool isFirstLoad;
 	public int enemyCntA;
 	public int enemyCntB;
 	public int enemyCntC;
@@ -50,16 +51,7 @@ public class GameManager : MonoBehaviour
 
 	void Awake()
 	{
-		/*if ((SceneManager.GetActiveScene().name == "0_StartStage") && (stage == 0))
-        {
-			menuCam.SetActive(true);
-			gameCam.SetActive(false);
-
-			menuPanel.SetActive(true);
-			gamePanel.SetActive(false);
-		}*/
-		
-		if (instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -71,6 +63,7 @@ public class GameManager : MonoBehaviour
         }
         enemyList = new List<int>();
         maxScoreTxt.text = string.Format("{0:n0}", PlayerPrefs.GetInt("MaxScore"));
+		isFirstLoad = true;
     }
 
     void OnEnable()
@@ -81,7 +74,12 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		if (SceneManager.GetActiveScene().name != "0_StartStage")
+		if(!isFirstLoad && SceneManager.GetActiveScene().name == "0_StartStage")
+		{
+            menuCam = GameObject.FindGameObjectWithTag("MenuCam");
+            menuCam.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().name != "0_StartStage")
 			StageStart();
 	}
 
@@ -91,13 +89,13 @@ public class GameManager : MonoBehaviour
     }
     public void GameStart()
     {
-		gameCam.SetActive(true);
-		menuCam.SetActive(false);
+        gameCam.SetActive(true);
+        menuCam.SetActive(false);
 
-		menuPanel.SetActive(false);
-		gamePanel.SetActive(true);
-
-		Player.instance.gameObject.SetActive(true);
+        menuPanel.SetActive(false);
+        gamePanel.SetActive(true);
+        Player.instance.gameObject.SetActive(true);
+        isFirstLoad = false;
     }
 
     public void GameOver()
