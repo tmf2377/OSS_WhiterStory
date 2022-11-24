@@ -7,6 +7,7 @@ public class LoadScene : MonoBehaviour
 {
     public SaveManager saveManager;
     bool is_first = true;
+    public static bool is_clear = false;
     private void Start()
     {
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
@@ -22,7 +23,11 @@ public class LoadScene : MonoBehaviour
     {
         if(arg0.name == "0_StartStage")
         {
-            saveManager.WriteALL();
+            if (is_clear)
+            {
+                saveManager.WriteALL();
+                is_clear = false;
+            }
             if (is_first)
             {
                 saveManager.AttachDataToPlayer();

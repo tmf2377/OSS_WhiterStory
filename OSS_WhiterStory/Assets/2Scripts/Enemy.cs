@@ -20,12 +20,14 @@ public class Enemy : MonoBehaviour
     public bool isChase;
     public bool isAttack;
     public bool isDead;
+    public bool isHit = false;
 
     public Rigidbody rigid;
     public BoxCollider boxCollider;
     public MeshRenderer[] meshs;
     public NavMeshAgent nav;
     public Animator anim;
+
 
     private void Awake()
     {
@@ -174,7 +176,12 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator OnDamage(Vector3 reactVec,bool isGrenade)
     {
-        foreach(MeshRenderer mesh in meshs)
+        if(isDead)
+            yield break;
+        if(isHit)
+            yield break;
+        isHit = true;
+        foreach (MeshRenderer mesh in meshs)
             mesh.material.color = Color.red;
 
         yield return new WaitForSeconds(0.1f);
@@ -235,5 +242,6 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject, 4);
             Player.instance.enemyCnt++;
         }
+        isHit = false;
     }
 }

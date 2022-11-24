@@ -11,6 +11,7 @@ public class ClearPortal : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            LoadScene.is_clear = true;
             SceneManager.LoadScene("0_StartStage");
             Player.instance.transform.position = Vector3.up * 0.8f;
         }
