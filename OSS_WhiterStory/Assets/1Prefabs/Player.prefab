@@ -379,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   damage: 25
-  rate: 0.4
+  rate: 0.8
   meleeArea: {fileID: 2584258818496459260}
   trailEffect: {fileID: 2584258820274954207}
   bulletPos: {fileID: 0}

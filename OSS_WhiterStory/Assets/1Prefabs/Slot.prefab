@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -222,9 +222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2bc0bd4a98312748a0dc91c743436d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotnum: 0
   item:
     itemType: 0
     itemName: 
     itemImage: {fileID: 0}
     itemPotion: {fileID: 0}
+    efts: []
   itemIcon: {fileID: 6684844819386015874}

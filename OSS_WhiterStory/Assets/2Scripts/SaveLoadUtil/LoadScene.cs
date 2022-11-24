@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
     public SaveManager saveManager;
+    bool is_first = true;
     private void Start()
     {
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
@@ -22,8 +23,12 @@ public class LoadScene : MonoBehaviour
         if(arg0.name == "0_StartStage")
         {
             saveManager.WriteALL();
+            if (is_first)
+            {
+                saveManager.AttachDataToPlayer();
+                is_first = false;
+            }
         }
-        saveManager.AttachDataToPlayer();
     }
 
     public void EnterNewGame()

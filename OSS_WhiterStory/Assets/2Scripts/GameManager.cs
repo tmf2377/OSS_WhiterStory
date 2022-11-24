@@ -93,7 +93,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        gamePanel.SetActive(false);
+		stage--;
+		gamePanel.SetActive(false);
 		overPanel.SetActive(true);
     }
 
@@ -108,7 +109,8 @@ public class GameManager : MonoBehaviour
     public void StageStart()
 	{
 		isBattle = true;
-		stage = SceneManager.GetActiveScene().buildIndex;
+		//stage = SceneManager.GetActiveScene().buildIndex;
+		stage++;
 		enemyZones = GameObject.FindGameObjectsWithTag("Enemy Zone");
         clearPortal = GameObject.FindGameObjectWithTag("StartZone");
         clearPortal.SetActive(false);
