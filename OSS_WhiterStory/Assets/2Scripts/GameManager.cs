@@ -123,8 +123,11 @@ public class GameManager : MonoBehaviour
 	{
 		clearPortal.SetActive(true);
         isBattle = false;
-
-		foreach(GameObject zone in enemyZones)
+        enemyCntA = 0;
+		enemyCntB = 0;
+		enemyCntC = 0;
+		enemyCntD = 0;
+        foreach (GameObject zone in enemyZones)
 			zone.SetActive(false);
 	}
 

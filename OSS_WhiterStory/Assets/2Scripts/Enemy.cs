@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public BoxCollider meleeArea;
     public GameObject bullet;
     public GameObject[] coins;
+    public GameObject[] potions;
     public bool isChase;
     public bool isAttack;
     public bool isDead;
@@ -195,7 +196,9 @@ public class Enemy : MonoBehaviour
 
             Player.instance.score += score;
             int ranCoin = Random.Range(0, 3);
+            int ranPotion = Random.Range(0, 3);
             Instantiate(coins[ranCoin], transform.position, Quaternion.identity);
+            Instantiate(potions[ranPotion], transform.position, Quaternion.identity);
 
             switch (enemyType)
             {

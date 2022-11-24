@@ -409,6 +409,7 @@ public class Player : MonoBehaviour
         transform.position = Vector3.up * 0.8f;
         anim.SetBool("isDead", false);
         isDead = false;
+        health = 100;
     }
     void OnTriggerStay(Collider other)
     {

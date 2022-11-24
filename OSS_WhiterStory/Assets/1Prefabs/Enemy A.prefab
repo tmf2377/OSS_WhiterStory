@@ -90,6 +90,10 @@ MonoBehaviour:
   - {fileID: 44069469326764038, guid: b709fb64d54e2a64bac23628e5eb0cfe, type: 3}
   - {fileID: 3744180851899156269, guid: 54d9d31557f4cbf45ba7870f78549535, type: 3}
   - {fileID: 1324847140066492095, guid: e0031aee28b191f4d9440e622139beba, type: 3}
+  potions:
+  - {fileID: 4472189129175995729, guid: 9cea32b3ab0ea804ea2c5ef31ecc63f3, type: 3}
+  - {fileID: 2607396425296261047, guid: f629f88e7620a1c4b9869a0cf97ec76e, type: 3}
+  - {fileID: 8632057185899843755, guid: 85f7e670c8f387747af2e132188b59e7, type: 3}
   isChase: 0
   isAttack: 0
   isDead: 0
