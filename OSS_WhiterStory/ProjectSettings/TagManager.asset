@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Floor
+  - Item
+  - Weapon
+  - Melee
+  - Wall
+  - Bullet
+  - Shop
+  - FieldItem
+  - Potion
+  - Enemy
+  - EnemyBullet
+  - Enemy Zone
+  - StartZone
+  - NPC
+  - BossNPC
   layers:
   - Default
   - TransparentFX
@@ -13,13 +28,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Floor
+  - Player
+  - PlayerBullet
+  - BulletCase
+  - Wall
+  - Enemy
+  - EnemyDead
   - 
   - 
   - 

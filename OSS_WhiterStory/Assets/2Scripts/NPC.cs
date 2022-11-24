@@ -1,25 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour
 {
-    void npcTargeting()
+    public RectTransform uiGroup;
+    public Animator anim;
+    public GameManager manager;
+
+    Player enterPlayer;
+    public void Enter(Player player) //입장
     {
-        float ntargetRadious = 1.5F;
-        float ntargetRange = 3f;
-
-        RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, ntargetRadious,
-           transform.forward, ntargetRange,
-           LayerMask.GetMask("Player"));
-
-        if (rayHits.Length > 0)
-        {
-            //대화
-        }
+        enterPlayer = player;
+        uiGroup.anchoredPosition = Vector3.zero;
     }
-    private void FixedUpdate()
+
+    public void NpcExit() //일반 대화 퇴장
     {
-        npcTargeting();
+        anim.SetTrigger("doHello");
+        uiGroup.anchoredPosition = Vector3.down * 2031;
     }
 }

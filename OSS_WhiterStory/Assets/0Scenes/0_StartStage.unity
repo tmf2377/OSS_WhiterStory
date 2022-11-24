@@ -8212,17 +8212,17 @@ PrefabInstance:
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: ammo
-      value: 999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: coin
-      value: 99999
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: health
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
@@ -8252,17 +8252,17 @@ PrefabInstance:
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: hasWeapons.Array.data[0]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: hasWeapons.Array.data[1]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: hasWeapons.Array.data[2]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7499811856381313032, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
