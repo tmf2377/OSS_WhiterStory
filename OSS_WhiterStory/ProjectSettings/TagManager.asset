@@ -17,6 +17,8 @@ TagManager:
   - EnemyBullet
   - Enemy Zone
   - StartZone
+  - NPC
+  - BossNPC
   layers:
   - Default
   - TransparentFX
@@ -33,22 +35,6 @@ TagManager:
   - Wall
   - Enemy
   - EnemyDead
-  layers:
-  - Default
-  - TransparentFX
-  - Ignore Raycast
-  - 
-  - Water
-  - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

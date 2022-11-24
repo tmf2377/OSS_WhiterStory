@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NPC : MonoBehaviour
+public class BossNPC : MonoBehaviour
 {
     public int CntBoss;
     public int KillBoss;
