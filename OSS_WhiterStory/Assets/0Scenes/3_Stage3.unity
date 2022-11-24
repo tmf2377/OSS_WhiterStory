@@ -4963,6 +4963,7 @@ MonoBehaviour:
   stage: 1
   playTime: 0
   isBattle: 0
+  isFirstLoad: 0
   enemyCntA: 0
   enemyCntB: 0
   enemyCntC: 0

@@ -116,8 +116,7 @@ public class GameManager : MonoBehaviour
     public void StageStart()
 	{
 		isBattle = true;
-		//stage = SceneManager.GetActiveScene().buildIndex;
-		stage++;
+		stage = SceneManager.GetActiveScene().buildIndex;
 		enemyZones = GameObject.FindGameObjectsWithTag("Enemy Zone");
         clearPortal = GameObject.FindGameObjectWithTag("StartZone");
         clearPortal.SetActive(false);
@@ -140,7 +139,7 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator InBattle()
 	{
-		for (int index = 0; index < stage; index++)
+		for (int index = 0; index < stage * 10; index++)
         {
             int ran = Random.Range(0, 3);
             enemyList.Add(ran);

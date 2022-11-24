@@ -11,7 +11,6 @@ public class StartZone : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            
             SceneManager.LoadScene((GameManager.instance.stage+1)+"_Stage"+ (GameManager.instance.stage + 1));
             Player.instance.transform.position = Vector3.up * 0.8f;
         }
