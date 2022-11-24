@@ -4812,13 +4812,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974eca731801daa4bb078a600fa38fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CntBoss: 0
-  KillBoss: 0
-  uiset: {fileID: 0}
-  QuestFail: {fileID: 0}
-  anim: {fileID: 0}
-  killBoss: {fileID: 0}
-  cntBoss: {fileID: 0}
+  uiGroup: {fileID: 0}
+  BossAliveGroup: {fileID: 0}
+  killBossText: {fileID: 0}
+  anim: {fileID: 7484102838041298526}
+  killBoss: 0
   manager: {fileID: 0}
 --- !u!95 &7484102838041298526
 Animator:

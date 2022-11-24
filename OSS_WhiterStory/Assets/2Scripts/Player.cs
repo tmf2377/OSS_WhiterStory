@@ -287,6 +287,16 @@ public class Player : MonoBehaviour
                 shop.Enter(this);
                 isShop = true;
             }
+            else if (nearObject.tag == "NPC")
+            {
+                NPC npc = nearObject.GetComponent<NPC>();
+                npc.Enter(this);
+            }
+            else if(nearObject.tag == "BossNPC")
+            {
+                BossNPC bossnpc = nearObject.GetComponent<BossNPC>();
+                bossnpc.Enter(this);
+            }
         }
     }
 
@@ -402,7 +412,7 @@ public class Player : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Weapon"||other.tag == "Shop") {
+        if (other.tag == "Weapon"||other.tag == "Shop" || other.tag == "NPC" || other.tag == "BossNPC") {
             nearObject = other.gameObject;
         }
     }
@@ -415,7 +425,19 @@ public class Player : MonoBehaviour
         {
             Shop shop = nearObject.GetComponent<Shop>();
             shop.Exit();
-            isShop=false;
+            isShop = false;
+            nearObject = null;
+        }
+        else if(other.tag == "NPC")
+        {
+            NPC npc = nearObject.GetComponent<NPC>();
+            npc.NpcExit();
+            nearObject = null;
+        }
+        else if (other.tag == "BossNPC")
+        {
+            BossNPC bossnpc = nearObject.GetComponent<BossNPC>();
+            bossnpc.NpcExit();
             nearObject = null;
         }
     }
