@@ -8,6 +8,7 @@ public class BossNPC : MonoBehaviour
 {
     public RectTransform uiGroup;
     public RectTransform BossAliveGroup;
+    public RectTransform GameClearGroup;
     public Text killBossText;
     public Animator anim;
     public int killBoss;
@@ -33,7 +34,12 @@ public class BossNPC : MonoBehaviour
 
     public void BossquestExit()
     {
-        BossAliveGroup.anchoredPosition = Vector3.down * 3241;
+        BossAliveGroup.anchoredPosition = Vector3.down * 2973;
+    }
+
+    public void GameClearExit()
+    {
+        GameClearGroup.anchoredPosition = Vector3.down * 3300;
     }
 
     public void CatchMonster() //보스 몬스터가 죽는 함수에 삽입
@@ -47,6 +53,7 @@ public class BossNPC : MonoBehaviour
         {
             uiGroup.anchoredPosition = Vector3.down * 2546;
             //게임 클리어 UI
+            GameClearGroup.anchoredPosition = Vector3.zero;
         }
         else //못 죽였으면
         {
