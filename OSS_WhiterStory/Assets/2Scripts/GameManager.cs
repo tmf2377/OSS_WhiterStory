@@ -50,7 +50,16 @@ public class GameManager : MonoBehaviour
 
 	void Awake()
 	{
-        if (instance == null)
+		/*if ((SceneManager.GetActiveScene().name == "0_StartStage") && (stage == 0))
+        {
+			menuCam.SetActive(true);
+			gameCam.SetActive(false);
+
+			menuPanel.SetActive(true);
+			gamePanel.SetActive(false);
+		}*/
+		
+		if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
