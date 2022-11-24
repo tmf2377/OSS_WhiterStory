@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator InBattle()
 	{
-		for (int index = 0; index < stage * 10; index++)
+		for (int index = 0; index < stage * 8; index++)
         {
             int ran = Random.Range(0, 3);
             enemyList.Add(ran);
@@ -162,6 +162,7 @@ public class GameManager : MonoBehaviour
         {
             int ranZone = Random.Range(0, 4);
             GameObject instantEnemy = Instantiate(enemies[enemyList[0]], enemyZones[ranZone].transform.position, enemyZones[ranZone].transform.rotation);
+			Debug.Log(enemies[enemyList[0]]);
             Enemy enemy = instantEnemy.GetComponent<Enemy>();
             enemy.manager = this;
             enemyList.RemoveAt(0);
