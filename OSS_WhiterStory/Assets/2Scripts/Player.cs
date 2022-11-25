@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     bool isBorder;
     bool isShop;
     bool isDamage;
+    bool isTalk;
     public bool isDead;
 
     Vector3 moveVec;
@@ -287,12 +288,12 @@ public class Player : MonoBehaviour
                 shop.Enter(this);
                 isShop = true;
             }
-            else if (nearObject.tag == "NPC")
+            else if (nearObject.tag == "NPC" && isTalk == true)
             {
                 NPC npc = nearObject.GetComponent<NPC>();
                 npc.Enter(this);
             }
-            else if(nearObject.tag == "BossNPC")
+            else if(nearObject.tag == "BossNPC" && isTalk == true)
             {
                 BossNPC bossnpc = nearObject.GetComponent<BossNPC>();
                 bossnpc.Enter(this);
@@ -325,14 +326,14 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Item")
+        if (other.tag == "Item")
         {
             Item item = other.GetComponent<Item>();
-            switch(item.type)
+            switch (item.type)
             {
                 case Item.Type.Ammo:
                     ammo += item.value;
-                    if(ammo > maxAmmo)
+                    if (ammo > maxAmmo)
                         ammo = maxAmmo;
                     break;
                 case Item.Type.Coin:
@@ -354,9 +355,9 @@ public class Player : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
-        else if(other.tag == "EnemyBullet")
+        else if (other.tag == "EnemyBullet")
         {
-            if(!isDamage)
+            if (!isDamage)
             {
                 Bullet enemyBullet = other.GetComponent<Bullet>();
                 health -= enemyBullet.damage;
@@ -368,6 +369,8 @@ public class Player : MonoBehaviour
             if (other.GetComponent<Rigidbody>() != null)
                 Destroy(other.gameObject);
         }
+        else if (other.tag == "NPC" || other.tag == "BossNPC")
+            isTalk = true;
     }
 
     IEnumerator OnDamage(bool isBossAtk)
@@ -429,6 +432,8 @@ public class Player : MonoBehaviour
             isShop = false;
             nearObject = null;
         }
+        else if (other.tag == "NPC" || other.tag == "BossNPC")
+            isTalk = false;
     }
 
     public int Health()

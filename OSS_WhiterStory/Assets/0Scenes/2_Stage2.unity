@@ -16087,6 +16087,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2091619974}
+    - target: {fileID: 817184702805877908, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2091619974}
+    - target: {fileID: 817184702805877908, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NpcExit
+      objectReference: {fileID: 0}
     - target: {fileID: 4742144115336248566, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
         type: 3}
       propertyPath: m_Name
