@@ -316,7 +316,7 @@ public class Player : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Floor")
+        if(collision.gameObject.tag == "Floor" || (collision.gameObject.tag == "LowWall" && transform.position.y >= 3))
         {
             anim.SetBool("isJump", false);
             isJump = false;
