@@ -43,12 +43,12 @@ public class BossNPC : MonoBehaviour
 
     public void NpcExit() //일반 대화 퇴장
     {
+        Time.timeScale = 1;
+        IsPause = false;
         anim.SetTrigger("doHello");
         uiGroup.anchoredPosition = Vector3.down * 4133;
         uiGroup1.anchoredPosition = Vector3.down * 4652;
         uiGroup2.anchoredPosition = Vector3.down * 5177;
-        Time.timeScale = 1;
-        IsPause = false;
     }
     public void NpcTalk()
     {

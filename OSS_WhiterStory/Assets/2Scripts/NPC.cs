@@ -40,6 +40,8 @@ public class NPC : MonoBehaviour
 
     public void NpcExit() //일반 대화 퇴장
     {
+        Time.timeScale = 1;
+        IsPause = false;
         anim.SetTrigger("doHello");
         uiGroup.anchoredPosition = Vector3.down * 2049;
         uiGroup1.anchoredPosition = Vector3.down * 2573;
@@ -47,8 +49,6 @@ public class NPC : MonoBehaviour
         uiGroup3.anchoredPosition = Vector3.down * 3613;
         uiGroup4.anchoredPosition = Vector3.down * 6750;
         uiGroup5.anchoredPosition = Vector3.down * 7275;
-        Time.timeScale = 1;
-        IsPause = false;
     }
 
     public void NpcTalk()
