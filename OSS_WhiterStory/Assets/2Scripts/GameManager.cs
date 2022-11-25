@@ -109,7 +109,12 @@ public class GameManager : MonoBehaviour
 		SceneManager.LoadScene("0_StartStage");
         gamePanel.SetActive(true);
         overPanel.SetActive(false);
-		StageEnd();
+        enemyCntA = 0;
+        enemyCntB = 0;
+        enemyCntC = 0;
+        enemyCntD = 0;
+		enemyList.Clear();
+        StageEnd();
     }
 
     public void StageStart()
@@ -128,10 +133,6 @@ public class GameManager : MonoBehaviour
 	{
 		clearPortal.SetActive(true);
         isBattle = false;
-        enemyCntA = 0;
-		enemyCntB = 0;
-		enemyCntC = 0;
-		enemyCntD = 0;
         foreach (GameObject zone in enemyZones)
 			zone.SetActive(false);
 	}
