@@ -28558,6 +28558,21 @@ PrefabInstance:
       propertyPath: uiGroup
       value: 
       objectReference: {fileID: 3678469019078946147}
+    - target: {fileID: 2798956718959760375, guid: 7e2c2a3ea0c53454286eaf4aa5bb082c,
+        type: 3}
+      propertyPath: uiGroup1
+      value: 
+      objectReference: {fileID: 4742144115004822230}
+    - target: {fileID: 2798956718959760375, guid: 7e2c2a3ea0c53454286eaf4aa5bb082c,
+        type: 3}
+      propertyPath: uiGroup2
+      value: 
+      objectReference: {fileID: 4742144115004822229}
+    - target: {fileID: 2798956718959760375, guid: 7e2c2a3ea0c53454286eaf4aa5bb082c,
+        type: 3}
+      propertyPath: uiGroup3
+      value: 
+      objectReference: {fileID: 4742144115004822228}
     - target: {fileID: 4818859933446437315, guid: 7e2c2a3ea0c53454286eaf4aa5bb082c,
         type: 3}
       propertyPath: m_RootOrder
@@ -28762,8 +28777,66 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2280092509151721149}
+    - target: {fileID: 4742144116357072634, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2280092509151721149}
+    - target: {fileID: 4742144116357072634, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NpcTalk2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742144116358388801, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2280092509151721149}
+    - target: {fileID: 4742144116358388801, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NpcTalk1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742144116645475490, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2280092509151721149}
+    - target: {fileID: 4742144116645475490, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742144116721022840, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2280092509151721149}
+    - target: {fileID: 4742144116721022840, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NpcTalk
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae3f7535cfcf7f42b5579ad1c585a5b, type: 3}
+--- !u!224 &4742144115004822228 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4742144114841143084, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4742144115004822227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &4742144115004822229 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4742144114702259806, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4742144115004822227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &4742144115004822230 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4742144115006131733, guid: aae3f7535cfcf7f42b5579ad1c585a5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4742144115004822227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6290122006808509209
 MonoBehaviour:
   m_ObjectHideFlags: 0

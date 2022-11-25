@@ -26,6 +26,8 @@ public class NPC : MonoBehaviour
     {
         anim.SetTrigger("doHello");
         uiGroup.anchoredPosition = Vector3.down * 2049;
+        uiGroup1.anchoredPosition = Vector3.down * 2573;
+        uiGroup2.anchoredPosition = Vector3.down * 3087;
     }
 
     public void NpcTalk()

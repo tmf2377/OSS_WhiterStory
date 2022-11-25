@@ -429,18 +429,6 @@ public class Player : MonoBehaviour
             isShop = false;
             nearObject = null;
         }
-        else if(other.tag == "NPC")
-        {
-            NPC npc = nearObject.GetComponent<NPC>();
-            npc.NpcExit();
-            nearObject = null;
-        }
-        else if (other.tag == "BossNPC")
-        {
-            BossNPC bossnpc = nearObject.GetComponent<BossNPC>();
-            bossnpc.NpcExit();
-            nearObject = null;
-        }
     }
 
     public int Health()
