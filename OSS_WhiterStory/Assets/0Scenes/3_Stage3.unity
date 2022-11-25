@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 55565348}
   - component: {fileID: 55565347}
   - component: {fileID: 55565346}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Small Wall (3)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 70287571}
   - component: {fileID: 70287570}
   - component: {fileID: 70287569}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (8)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 150350780}
   - component: {fileID: 150350779}
   - component: {fileID: 150350778}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Small Wall (2)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -1645,7 +1645,7 @@ GameObject:
   - component: {fileID: 287380265}
   - component: {fileID: 287380264}
   - component: {fileID: 287380263}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (1)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -2600,7 +2600,7 @@ GameObject:
   - component: {fileID: 392107763}
   - component: {fileID: 392107762}
   - component: {fileID: 392107761}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (15)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -2710,7 +2710,7 @@ GameObject:
   - component: {fileID: 428598430}
   - component: {fileID: 428598429}
   - component: {fileID: 428598428}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (10)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -3167,7 +3167,7 @@ GameObject:
   - component: {fileID: 548615130}
   - component: {fileID: 548615129}
   - component: {fileID: 548615128}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (12)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -3277,7 +3277,7 @@ GameObject:
   - component: {fileID: 549700694}
   - component: {fileID: 549700693}
   - component: {fileID: 549700692}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (5)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -3512,7 +3512,7 @@ GameObject:
   - component: {fileID: 614529072}
   - component: {fileID: 614529071}
   - component: {fileID: 614529070}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Small Wall (1)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -3819,7 +3819,7 @@ GameObject:
   - component: {fileID: 675674338}
   - component: {fileID: 675674337}
   - component: {fileID: 675674336}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (6)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -3929,7 +3929,7 @@ GameObject:
   - component: {fileID: 702359920}
   - component: {fileID: 702359919}
   - component: {fileID: 702359918}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (11)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -4240,7 +4240,7 @@ GameObject:
   - component: {fileID: 748699042}
   - component: {fileID: 748699041}
   - component: {fileID: 748699040}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (14)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -4610,7 +4610,7 @@ GameObject:
   - component: {fileID: 802071193}
   - component: {fileID: 802071192}
   - component: {fileID: 802071191}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (13)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -4714,6 +4714,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2584258818329237717, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584258818329237717, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: ammo
@@ -4759,6 +4769,11 @@ PrefabInstance:
       propertyPath: grenades.Array.data[3]
       value: 
       objectReference: {fileID: 2021551210}
+    - target: {fileID: 2584258818329237723, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
+        type: 3}
+      propertyPath: hasWeapons.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7499811856381313032, guid: 913cdd178cc390d4ab7b9cbbd7d85882,
         type: 3}
       propertyPath: m_Name
@@ -5277,7 +5292,7 @@ GameObject:
   - component: {fileID: 889901188}
   - component: {fileID: 889901187}
   - component: {fileID: 889901186}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (3)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -5476,7 +5491,7 @@ GameObject:
   - component: {fileID: 974854157}
   - component: {fileID: 974854156}
   - component: {fileID: 974854155}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Small Wall
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -6035,7 +6050,7 @@ GameObject:
   - component: {fileID: 1139163853}
   - component: {fileID: 1139163852}
   - component: {fileID: 1139163851}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (4)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -12121,7 +12136,7 @@ GameObject:
   - component: {fileID: 1508233283}
   - component: {fileID: 1508233282}
   - component: {fileID: 1508233281}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (2)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -12379,7 +12394,7 @@ GameObject:
   - component: {fileID: 1585683957}
   - component: {fileID: 1585683956}
   - component: {fileID: 1585683955}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (7)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -17396,7 +17411,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683546698}
-  m_Material: {fileID: 13400000, guid: d0de0acf6ba510c4aaaf54c5072b25c1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -18064,7 +18079,7 @@ GameObject:
   - component: {fileID: 1864428243}
   - component: {fileID: 1864428242}
   - component: {fileID: 1864428241}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall
   m_TagString: LowWall
   m_Icon: {fileID: 0}
@@ -18634,7 +18649,7 @@ GameObject:
   - component: {fileID: 2031682496}
   - component: {fileID: 2031682495}
   - component: {fileID: 2031682494}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Low Wall (9)
   m_TagString: LowWall
   m_Icon: {fileID: 0}
