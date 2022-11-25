@@ -184,9 +184,10 @@ public class Enemy : MonoBehaviour
         foreach (MeshRenderer mesh in meshs)
             mesh.material.color = Color.red;
 
-        yield return new WaitForSeconds(0.1f);
+        
         if(curHealth > 0)
         {
+            yield return new WaitForSeconds(0.1f);
             foreach (MeshRenderer mesh in meshs)
                 mesh.material.color = Color.white;
         }
