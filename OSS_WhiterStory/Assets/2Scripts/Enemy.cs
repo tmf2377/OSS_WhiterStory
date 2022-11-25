@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent nav;
     public Animator anim;
 
+    public BossNPC bossNpc;
+
 
     private void Awake()
     {
@@ -36,7 +38,8 @@ public class Enemy : MonoBehaviour
         meshs = GetComponentsInChildren<MeshRenderer>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-
+        if(enemyType == Type.D)
+            bossNpc = GameObject.Find("Zone(Ludo)").GetComponent<BossNPC>();
         if(enemyType != Type.D)
             Invoke("ChaseStart", 2);
     }
@@ -184,9 +187,10 @@ public class Enemy : MonoBehaviour
         foreach (MeshRenderer mesh in meshs)
             mesh.material.color = Color.red;
 
-        yield return new WaitForSeconds(0.1f);
+        
         if(curHealth > 0)
         {
+            yield return new WaitForSeconds(0.1f);
             foreach (MeshRenderer mesh in meshs)
                 mesh.material.color = Color.white;
         }
@@ -220,6 +224,8 @@ public class Enemy : MonoBehaviour
                     break;
                 case Type.D:
                     manager.enemyCntD--;
+                    while (bossNpc == null) { bossNpc = GameObject.Find("Zone(Ludo)").GetComponent<BossNPC>(); }
+                    bossNpc.CatchMonster();
                     break;
 
             }
