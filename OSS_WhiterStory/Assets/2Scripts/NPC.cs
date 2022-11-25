@@ -13,13 +13,24 @@ public class NPC : MonoBehaviour
     public Animator anim;
     public GameManager manager;
 
+    bool IsPause;
 
     Player enterPlayer;
+
+    void Start()
+    {
+        IsPause = false;
+    }
 
     public void Enter(Player player) //입장
     {
         enterPlayer = player;
         uiGroup.anchoredPosition = Vector3.zero;
+        if (IsPause == false)
+        {
+            Time.timeScale = 0;
+            IsPause = true;
+        }
     }
 
     public void NpcExit() //일반 대화 퇴장
@@ -28,6 +39,8 @@ public class NPC : MonoBehaviour
         uiGroup.anchoredPosition = Vector3.down * 2049;
         uiGroup1.anchoredPosition = Vector3.down * 2573;
         uiGroup2.anchoredPosition = Vector3.down * 3087;
+        Time.timeScale = 1;
+        IsPause = false;
     }
 
     public void NpcTalk()
@@ -49,5 +62,7 @@ public class NPC : MonoBehaviour
     {
         anim.SetTrigger("doHello");
         uiGroup3.anchoredPosition = Vector3.down * 3613;
+        Time.timeScale = 1;
+        IsPause = false;
     }
 }

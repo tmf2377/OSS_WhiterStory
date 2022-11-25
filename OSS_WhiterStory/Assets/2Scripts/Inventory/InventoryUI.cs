@@ -9,6 +9,7 @@ public class InventoryUI : MonoBehaviour
 
     public GameObject inventoryPanel;
     bool activeInventory = false;
+    bool IsPause;
 
     public Slot[] slots;
     public Transform slotHolder;
@@ -20,6 +21,7 @@ public class InventoryUI : MonoBehaviour
         inven.onSlotCountChange += SlotChange;
         inven.onChangeItem += RedrawSlotUI;
         inventoryPanel.SetActive(activeInventory);
+        IsPause = false;
     }
 
     private void SlotChange(int val)
@@ -48,10 +50,17 @@ public class InventoryUI : MonoBehaviour
     {
         activeInventory = true;
         inventoryPanel.SetActive(activeInventory);
+        if (IsPause == false)
+        {
+            Time.timeScale = 0;
+            IsPause = true;
+        }
     }
 
     public void CloseInventory()
     {
+        Time.timeScale = 1;
+        IsPause = false;
         activeInventory = false;
         inventoryPanel.SetActive(activeInventory);
     }
