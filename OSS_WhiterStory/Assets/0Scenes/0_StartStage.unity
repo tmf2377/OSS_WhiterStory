@@ -1790,17 +1790,17 @@ PrefabInstance:
     - target: {fileID: 4305685899709173902, guid: eb58ba3623872fb47bbc65adc5807106,
         type: 3}
       propertyPath: itemPrice.Array.data[0]
-      value: 400
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4305685899709173902, guid: eb58ba3623872fb47bbc65adc5807106,
         type: 3}
       propertyPath: itemPrice.Array.data[1]
-      value: 900
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4305685899709173902, guid: eb58ba3623872fb47bbc65adc5807106,
         type: 3}
       propertyPath: itemPrice.Array.data[2]
-      value: 1600
+      value: 700
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb58ba3623872fb47bbc65adc5807106, type: 3}
@@ -15772,12 +15772,12 @@ PrefabInstance:
     - target: {fileID: 4619502792480640674, guid: 790cf20de0d9c044ab0b4c9eafbb1759,
         type: 3}
       propertyPath: itemPrice.Array.data[1]
-      value: 1300
+      value: 1100
       objectReference: {fileID: 0}
     - target: {fileID: 4619502792480640674, guid: 790cf20de0d9c044ab0b4c9eafbb1759,
         type: 3}
       propertyPath: itemPrice.Array.data[2]
-      value: 2100
+      value: 1700
       objectReference: {fileID: 0}
     - target: {fileID: 4619502793867388616, guid: 790cf20de0d9c044ab0b4c9eafbb1759,
         type: 3}
@@ -17065,7 +17065,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2100
+  m_Text: 1700
 --- !u!224 &6717399752459817587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18779,7 +18779,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1600
+  m_Text: 700
 --- !u!224 &6717399753063047921
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22865,7 +22865,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1300
+  m_Text: 1100
 --- !u!224 &6717399754276992117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22961,7 +22961,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 400
+  m_Text: 250
 --- !u!224 &6717399754280414703
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23378,7 +23378,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 900
+  m_Text: 400
 --- !u!224 &6717399754351550965
 RectTransform:
   m_ObjectHideFlags: 0
