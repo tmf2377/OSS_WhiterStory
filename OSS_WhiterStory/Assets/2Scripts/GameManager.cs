@@ -69,7 +69,6 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-		clearPortal.SetActive(false);
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -116,7 +115,7 @@ public class GameManager : MonoBehaviour
     public void StageStart()
 	{
 		isBattle = true;
-		stage = SceneManager.GetActiveScene().buildIndex;
+		stage = SceneManager.GetActiveScene().buildIndex - 1;
 		enemyZones = GameObject.FindGameObjectsWithTag("Enemy Zone");
         clearPortal = GameObject.FindGameObjectWithTag("StartZone");
         clearPortal.SetActive(false);

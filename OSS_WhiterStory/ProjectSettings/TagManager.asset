@@ -20,6 +20,7 @@ TagManager:
   - NPC
   - BossNPC
   - MenuCam
+  - LowWall
   layers:
   - Default
   - TransparentFX
