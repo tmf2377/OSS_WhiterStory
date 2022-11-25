@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType: 1
-    itemName: potion3
+    itemName: BigPotion
     itemImage: {fileID: 21300000, guid: fdcd5800d8590864f8fb47a8e8829266, type: 3}
     itemPotion: {fileID: 8632057185899843755}
     efts:

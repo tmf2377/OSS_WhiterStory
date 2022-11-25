@@ -210,7 +210,7 @@ public class Enemy : MonoBehaviour
             int ranPotion = Random.Range(0, 3);
             Instantiate(coins[ranCoin], transform.position, Quaternion.identity);
             Instantiate(potions[ranPotion], transform.position, Quaternion.identity);
-
+            Debug.Log(this.name + "Dead");
             switch (enemyType)
             {
                 case Type.A:

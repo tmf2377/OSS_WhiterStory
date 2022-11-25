@@ -67,6 +67,8 @@ public class Inventory : MonoBehaviour
         {
             Debug.Log("potion");
             FieldItems fieldItems = other.GetComponent<FieldItems>();
+            if (fieldItems.is_destroyed)
+                return;
             if (AddItem(fieldItems.GetItem()))
                 fieldItems.DestroyItem();
         }

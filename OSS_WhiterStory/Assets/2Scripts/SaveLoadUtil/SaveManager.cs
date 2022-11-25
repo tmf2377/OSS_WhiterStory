@@ -46,7 +46,7 @@ public class SaveManager : MonoBehaviour
         for(int i = 0; i < loaded_item_count; i++)
         {
             int temp = PlayerPrefs.GetInt(INVEN_INDEX_PRE+i, -1);
-            if(temp > 0)
+            if(temp > -1)
             {
                 loaded_item.Add(temp);
             }
@@ -55,8 +55,8 @@ public class SaveManager : MonoBehaviour
     }
     public void WriteALL()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        player = Player.instance;//GameObject.Find("Player").GetComponent<Player>();
+        gameManager = GameManager.instance;//GameObject.Find("Game Manager").GetComponent<GameManager>();
         if (player == null) return;
         if (gameManager == null) return;
 
@@ -70,12 +70,13 @@ public class SaveManager : MonoBehaviour
                 weapon_mask += (int)Mathf.Pow(2, i);
             }
         }
-        List<InventItem> items = player.GetComponent<Inventory>().items;
+        List<InventItem> items = Inventory.instance.items;
         int item_count =0;
         for (int i = 0; i < items.Count; i++)
         {
             for(int j=0;j<ItemDatabase.instance.itemDB.Count; j++)
             {
+                Debug.Log("Item Save Compair) inven item name :" + items[i].itemName + " / " + "DB item name :" + ItemDatabase.instance.itemDB[j].itemName);
                 if(items[i].itemName == ItemDatabase.instance.itemDB[j].itemName)
                 {
                     item_count++;

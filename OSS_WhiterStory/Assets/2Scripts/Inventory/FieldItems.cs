@@ -8,7 +8,7 @@ public class FieldItems : MonoBehaviour
     //public SpriteRenderer image;
     public Sprite image;
     public GameObject potion;
-
+    public bool is_destroyed = false;
     public void SetItem(InventItem _item)
     {
         item.itemName = _item.itemName;
@@ -28,6 +28,12 @@ public class FieldItems : MonoBehaviour
 
     public void DestroyItem()
     {
+        if (is_destroyed)
+        {
+            Debug.Log("파괴중입니다.");
+            return;
+        }
+        is_destroyed = true;
         Destroy(gameObject);
     }
 }
