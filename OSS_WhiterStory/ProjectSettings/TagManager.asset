@@ -37,8 +37,8 @@ TagManager:
   - Wall
   - Enemy
   - EnemyDead
-  - 
-  - 
+  - EnemyBullet
+  - LowWall
   - 
   - 
   - 
