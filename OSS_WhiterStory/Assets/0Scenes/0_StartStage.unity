@@ -1790,17 +1790,17 @@ PrefabInstance:
     - target: {fileID: 4305685899709173902, guid: eb58ba3623872fb47bbc65adc5807106,
         type: 3}
       propertyPath: itemPrice.Array.data[0]
-      value: 250
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4305685899709173902, guid: eb58ba3623872fb47bbc65adc5807106,
         type: 3}
       propertyPath: itemPrice.Array.data[1]
-      value: 400
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4305685899709173902, guid: eb58ba3623872fb47bbc65adc5807106,
         type: 3}
       propertyPath: itemPrice.Array.data[2]
-      value: 700
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb58ba3623872fb47bbc65adc5807106, type: 3}
@@ -18779,7 +18779,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 700
+  m_Text: 600
 --- !u!224 &6717399753063047921
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22961,7 +22961,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 250
+  m_Text: 150
 --- !u!224 &6717399754280414703
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23378,7 +23378,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 400
+  m_Text: 250
 --- !u!224 &6717399754351550965
 RectTransform:
   m_ObjectHideFlags: 0
