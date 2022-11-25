@@ -17,7 +17,14 @@ public class BossNPC : MonoBehaviour
     public int killBoss;
     public GameManager manager;
 
+    bool IsPause;
+
     Player enterPlayer;
+
+    void Start()
+    {
+        IsPause = false;
+    }
 
     public void Awake()
     {
@@ -27,6 +34,11 @@ public class BossNPC : MonoBehaviour
     {
         enterPlayer = player;
         uiGroup.anchoredPosition = Vector3.zero;
+        if (IsPause == false)
+        {
+            Time.timeScale = 0;
+            IsPause = true;
+        }
     }
 
     public void NpcExit() //일반 대화 퇴장
@@ -35,6 +47,8 @@ public class BossNPC : MonoBehaviour
         uiGroup.anchoredPosition = Vector3.down * 4133;
         uiGroup1.anchoredPosition = Vector3.down * 4652;
         uiGroup2.anchoredPosition = Vector3.down * 5177;
+        Time.timeScale = 1;
+        IsPause = false;
     }
     public void NpcTalk()
     {
@@ -55,6 +69,8 @@ public class BossNPC : MonoBehaviour
     {
         anim.SetTrigger("doHello");
         uiGroup3.anchoredPosition = Vector3.down * 5699;
+        Time.timeScale = 1;
+        IsPause = false;
     }
 
     public void BossquestExit()
