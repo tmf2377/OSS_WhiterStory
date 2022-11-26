@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
         if (isDodge) moveVec = dodgeVec;
 
         if (isSwap || isReload || !isFireReady || isDead) moveVec = Vector3.zero;
-        if(!isBorder)
+        if (!isBorder)
             transform.position += moveVec * speed * (wDown ? 0.3f : 1f) * Time.deltaTime;
         anim.SetBool("isRun", moveVec != Vector3.zero);
         anim.SetBool("isWalk", wDown);
@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
         {
             Ray ray = followCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit rayHit;
-            if(Physics.Raycast(ray,out rayHit, 100))
+            if (Physics.Raycast(ray, out rayHit, 100))
             {
                 Vector3 nextVec = rayHit.point - transform.position;
                 nextVec.y = 0;
@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
     {
         if (hasGrenades == 0)
             return;
-        if(gDown&& !isReload && !isSwap && !isDead)
+        if (gDown && !isReload && !isSwap && !isDead)
         {
             Ray ray = followCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit rayHit;
@@ -169,7 +169,7 @@ public class Player : MonoBehaviour
                 GameObject instantGrenade = Instantiate(grenadeObj, transform.position, transform.rotation);
                 Rigidbody rigidGrenade = instantGrenade.GetComponent<Rigidbody>();
                 rigidGrenade.AddForce(nextVec, ForceMode.Impulse);
-                rigidGrenade.AddTorque(Vector3.back*10, ForceMode.Impulse);
+                rigidGrenade.AddTorque(Vector3.back * 10, ForceMode.Impulse);
                 hasGrenades--;
                 grenades[hasGrenades].SetActive(false);
             }
@@ -229,7 +229,7 @@ public class Player : MonoBehaviour
         speed *= 0.5f;
         isDodge = false;
     }
-    
+
     void Swap()
     {
         if (sDown1 && (!hasWeapons[0] || equipWeaponIndex == 0))
@@ -246,7 +246,7 @@ public class Player : MonoBehaviour
 
         if ((sDown1 || sDown2 || sDown3) && !isJump && !isDodge && !isShop && !isDead)
         {
-            if(equipWeapon != null) 
+            if (equipWeapon != null)
                 equipWeapon.gameObject.SetActive(false);
 
             equipWeaponIndex = weaponIndex;
@@ -269,9 +269,9 @@ public class Player : MonoBehaviour
 
     void Interaction()
     {
-        if(iDown && nearObject != null && !isJump && !isDodge && !isDead)
+        if (iDown && nearObject != null && !isJump && !isDodge && !isDead)
         {
-            if(nearObject.tag == "Weapon")
+            if (nearObject.tag == "Weapon")
             {
                 Item item = nearObject.GetComponent<Item>();
                 int weaponIndex = item.value;
@@ -279,13 +279,18 @@ public class Player : MonoBehaviour
 
                 Destroy(nearObject);
             }
-            else if(nearObject.tag == "Shop")
+            else if (nearObject.tag == "Shop")
             {
                 Shop shop = nearObject.GetComponent<Shop>();
                 Debug.Log("j");
 
                 shop.Enter(this);
                 isShop = true;
+            }
+            else if (nearObject.tag == "npc")
+            {
+                NPC npc = nearObject.GetComponent<NPC>();
+                npc.Enter(this);
             }
         }
     }
@@ -296,8 +301,8 @@ public class Player : MonoBehaviour
     }
     void StopToWall()
     {
-        Debug.DrawRay(transform.position, transform.forward*5,Color.green);
-        isBorder = Physics.Raycast(transform.position, moveVec,5,LayerMask.GetMask("Wall"));
+        Debug.DrawRay(transform.position, transform.forward * 5, Color.green);
+        isBorder = Physics.Raycast(transform.position, moveVec, 5, LayerMask.GetMask("Wall"));
     }
     private void FixedUpdate()
     {
@@ -306,7 +311,7 @@ public class Player : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Floor")
         {
             anim.SetBool("isJump", false);
             isJump = false;
@@ -315,14 +320,14 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Item")
+        if (other.tag == "Item")
         {
             Item item = other.GetComponent<Item>();
-            switch(item.type)
+            switch (item.type)
             {
                 case Item.Type.Ammo:
                     ammo += item.value;
-                    if(ammo > maxAmmo)
+                    if (ammo > maxAmmo)
                         ammo = maxAmmo;
                     break;
                 case Item.Type.Coin:
@@ -344,9 +349,9 @@ public class Player : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
-        else if(other.tag == "EnemyBullet")
+        else if (other.tag == "EnemyBullet")
         {
-            if(!isDamage)
+            if (!isDamage)
             {
                 Bullet enemyBullet = other.GetComponent<Bullet>();
                 health -= enemyBullet.damage;
@@ -363,12 +368,12 @@ public class Player : MonoBehaviour
     IEnumerator OnDamage(bool isBossAtk)
     {
         isDamage = true;
-        foreach(MeshRenderer mesh in meshs)
+        foreach (MeshRenderer mesh in meshs)
         {
             mesh.material.color = Color.yellow;
         }
 
-        if(isBossAtk)
+        if (isBossAtk)
             rigid.AddForce(transform.forward * -25, ForceMode.Impulse);
 
         if (health <= 0 && !isDead)
@@ -402,7 +407,8 @@ public class Player : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Weapon"||other.tag == "Shop") {
+        if (other.tag == "Weapon" || other.tag == "Shop" || other.tag == "npc")
+        {
             nearObject = other.gameObject;
         }
     }
@@ -415,7 +421,13 @@ public class Player : MonoBehaviour
         {
             Shop shop = nearObject.GetComponent<Shop>();
             shop.Exit();
-            isShop=false;
+            isShop = false;
+            nearObject = null;
+        }
+        else if (other.tag == "npc") //영역에서 벗어나면 ui 내려감.
+        {
+            NPC npc = nearObject.GetComponent<NPC>();
+            npc.npcExit();
             nearObject = null;
         }
     }
