@@ -6,9 +6,10 @@
 
 
 # 설치
-### 1. [OSS_WhiterStory.zip] 압축 파일을 다운받습니다.
-### 2. 압축을 풀어줍니다.
-### 3. 아이콘이 들어있는 [OSS_WhiterStory.exe] 빌드파일을 더블클릭하여 실행합니다.
+### 1. [OSS_WhiterStory.zip]을 클릭하여 들어갑니다.
+### 2. Download 버튼을 눌러 압축 파일을 다운받습니다.
+### 3. 압축을 풀어줍니다.
+### 4. 아이콘이 들어있는 [OSS_WhiterStory.exe] 빌드파일을 더블클릭하여 실행합니다.
 
 
 # Unity 버전
