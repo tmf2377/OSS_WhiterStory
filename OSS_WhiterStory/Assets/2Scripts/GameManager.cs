@@ -164,6 +164,7 @@ public class GameManager : MonoBehaviour
             GameObject instantEnemy = Instantiate(enemies[enemyList[0]], enemyZones[ranZone].transform.position, enemyZones[ranZone].transform.rotation);
 			Debug.Log(enemies[enemyList[0]]);
             Enemy enemy = instantEnemy.GetComponent<Enemy>();
+			//enemy.target = player.transform;
             enemy.manager = this;
             enemyList.RemoveAt(0);
 			yield return new WaitForSeconds(10f);
